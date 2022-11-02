@@ -1,5 +1,5 @@
 ## Lab: Create an Extensible Super Class
-```
+---
 
 Complete the following:
 
@@ -12,8 +12,9 @@ properties and methods specific to the subclass.
 3. Instantiate a couple of objects from the subclasses and execute the methods
 producing some output.
 
-```
+---
+Answer:
 
-Added to taskmaster folder in var/www/html on the VM.
+Added source files to taskmaster folder in var/www/html on the VM.
 
-See /taskmaster/ in repository.
+Source files added to taskmaster folder in repository.

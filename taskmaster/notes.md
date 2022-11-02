@@ -1,5 +1,5 @@
 ## Notes
-```
+
 Idea is a "To-Do List" type of app. I like the name TaskMaster.
 
 A core class would be the Task class.
@@ -18,9 +18,12 @@ SubTask could be reimagined as each Task having an array of Objectives instead.
 
 A Task for example might be to take out your trash, but that is very broad.
 What does that even mean?
+
 Objectives listed in this Task would further detail the steps to complete task.
+```
 Objective: Remove garbage bag from bin and throw in dumpster.
 Objective: Replace bag in bin with new one.
+```
 
 Objective would be a different class and we could tie Objectives to Tasks,
 rather than imagining these Obectives as descendant types of the same class
