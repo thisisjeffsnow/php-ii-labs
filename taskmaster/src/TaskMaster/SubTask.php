@@ -18,8 +18,8 @@ class SubTask extends Task {
     public int    $importance;
 
     public function __construct(
-        int $id,
-        int $parent_id,
+        int    $id,
+        int    $parent_id,
         string $title,
         string $description
     ) {
