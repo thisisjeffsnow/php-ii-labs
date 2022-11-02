@@ -2,7 +2,7 @@
 namespace TaskMaster\Task;
 /**
  * Class:  ITTask
- * Parent: Task
+ * Parent: AbstractTask
  */
 use TaskMaster\Objective\Objective;
 use Exception;
