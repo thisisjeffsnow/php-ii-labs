@@ -1,5 +1,5 @@
-Lab: Namespace
-
+## Lab: Namespace
+```
 Have a look at the OrderApp in the course VM.
 
 1. Identify the namespaces used.
@@ -142,7 +142,9 @@ More namespaces were located with this common root:
   
   namespace Psr\Log\Test;
   Location: psr/log/Psr/Log/Test/*
-  
+
+```
+
 2. How is autoloading initiated?
 
 ~Zend/workspaces/DefaultWorkspace/orderapp/public/index.php sets BASE to
@@ -153,12 +155,12 @@ function below to spl_autoload_register():
         $file = str_replace('\\', '/', $class) . '.php';
         require BASE . '/src/' . $file;
     }
- 
+
 With this autoloader, a class X\Y\Z for example, is parsed into
 $file = X/Y/Z.php
 and then loaded by:
 require ~Zend/workspaces/DefaultWorkspace/orderapp/src/X/Y/Z.php
- 
+
 The classes in the vendor folder like Guzzle and Monolog do not appear that
 they would be autoloaded because the composer autoloader is commented out:
 
