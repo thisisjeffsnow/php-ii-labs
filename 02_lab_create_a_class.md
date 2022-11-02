@@ -1,5 +1,5 @@
 ## Lab: Create a Class
-```
+
 Complete the following:
 
 1. Create a class definition that represents or models something. Give it a
