@@ -5,7 +5,7 @@ namespace TaskMaster;
  */
 class Task {
     public const TABLE = 'task';
-       
+
     public int    $id;
     public string $title;
     public string $description;
@@ -15,9 +15,9 @@ class Task {
     public string $frequency = 'daily';
     public int    $enjoyment = 5;
     public int    $importance = 5;
-    
+
     public function __construct(
-        int $id,
+        int    $id,
         string $title,
         string $description
     ) {
@@ -25,46 +25,43 @@ class Task {
         $this->title = $title;
         $this->description = $description;
     }
-    
+
     /* Need more methods for the other variables. */
     /* $id should be unique and automatically assigned somehow. */
-    
+
     /**
      * @return int
      */
     public function get_id() : int {
         return $this->id;
     }
-    
+
     /**
      * @return string
      */
     public function get_title() : string {
         return $this->title;
     }
-    
+
     /**
      * @return void
      */
     public function set_title(string $title) : void {
         $this->title = $title;
     }
-    
-    
+
     /**
      * @return string
      */
     public function get_description() : string {
         return $this->description;
     }
-    
+
     /**
      * @return void
      */
     public function set_description(string $description) : void {
         $this->description = $description;
     }
-    
-    
-    
+
 }
