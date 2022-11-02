@@ -7,12 +7,12 @@ class Task {
     public const TABLE = 'task';
        
     public int    $id;
-	public string $title;
-	public string $description;
-	public string $visibility = 'show';
-	public string $location = 'home';
-	public string $expiry = '1/1/1970';
-	public string $frequency = 'daily';
+    public string $title;
+    public string $description;
+    public string $visibility = 'show';
+    public string $location = 'home';
+    public string $expiry = '1/1/1970';
+    public string $frequency = 'daily';
     public int    $enjoyment = 5;
     public int    $importance = 5;
     
