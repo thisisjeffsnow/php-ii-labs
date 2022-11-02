@@ -2,7 +2,6 @@
 /**
  * Application Entry
  */
-
 define('BASE', realpath(__DIR__ . '/../'));
 
 spl_autoload_register(
@@ -12,50 +11,38 @@ spl_autoload_register(
     }
 );
 
-use TaskMaster\Task;
-use TaskMaster\SubTask;
+use TaskMaster\Task\ITTask;
+use TaskMaster\Objective\Objective;
 
-echo '<p>Setting parent task.</p>';
+echo 'Create a new IT Task about applying updates. What does it look like?';
+echo PHP_EOL;
 
-$task = new Task(
-	0,
-	'Trash',
-	'Empty the trash.'
-);
-
-var_dump($task);
-
-echo '<p>Setting title.</p>';
-
-$task->set_title('Trash Master');
-
-var_dump($task);
-
-echo '<p>Setting child tasks.</p>';
-
-$child_task_1 = new SubTask(
-    1,
+$it_task = new ITTask(
     0,
-    'Chuck Bag',
-    'Throw the bag of garbage into the dumpster.',
+    'Apply Updates',
+    'Run updates on the local machine and reboot afterward'
 );
 
-$child_task_2 = new SubTask(
-    2,
-    0,
-    'Replace Bag',
-    'Grab a new bag under the sink and put it into the garbage bucket.',
-);
+echo $it_task;
+echo PHP_EOL;
 
-var_dump($child_task_1);
-var_dump($child_task_2);
+echo 'Add objectives to the IT Task. Now what does it look like?';
+echo PHP_EOL;
 
-echo '<p>Identifying parent task.</p>';
+$it_task->add_objective('Log into the server.');
+$it_task->add_objective('Search for updates.');
+$it_task->add_objective('Apply updates.');
+$it_task->add_objective('Reboot server.');
 
-echo $child_task_1->get_parent_id();
+echo $it_task;
+echo PHP_EOL;
 
-echo '<p>Identifying parent task (2).</p>';
+echo 'Try to set a property that does not exist on IT Task.';
+echo PHP_EOL;
 
-echo $child_task_2->get_parent_id();
-
-
+try {
+    $it_task->author = 'Jeff Snow';
+} catch (Exception $e) {
+    echo $e->getMessage();
+    echo PHP_EOL;
+}

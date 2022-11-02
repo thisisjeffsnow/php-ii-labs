@@ -1,14 +1,16 @@
 <?php
-namespace TaskMaster;
+namespace TaskMaster\Task;
+
 /**
- * Class Task
+ * Class AbstractTask
  */
-class Task {
+abstract class AbstractTask {
     public const TABLE = 'task';
 
     public int    $id;
     public string $title;
     public string $description;
+    public array  $objectives = [];
     public string $visibility = 'show';
     public string $location = 'home';
     public string $expiry = '1/1/1970';
@@ -26,8 +28,7 @@ class Task {
         $this->description = $description;
     }
 
-    /* Need more methods for the other variables. */
-    /* $id should be unique and automatically assigned somehow. */
+    public abstract function add_objective(string $description);
 
     /**
      * @return int
@@ -44,6 +45,7 @@ class Task {
     }
 
     /**
+     * @param string $title
      * @return void
      */
     public function set_title(string $title) : void {
@@ -58,6 +60,7 @@ class Task {
     }
 
     /**
+     * @param string $description
      * @return void
      */
     public function set_description(string $description) : void {
