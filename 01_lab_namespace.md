@@ -4,6 +4,8 @@ Have a look at the OrderApp in the course VM.
 
 1. Identify the namespaces used.
 
+```
+
 Several namespaces were located having this common root:
 ~Zend/workspaces/DefaultWorkspace/orderapp/src/OrderApp/
 
@@ -147,14 +149,16 @@ More namespaces were located with this common root:
 
 2. How is autoloading initiated?
 
+```
+
 ~Zend/workspaces/DefaultWorkspace/orderapp/public/index.php sets BASE to
 ~Zend/workspaces/DefaultWorkspace/orderapp/ and then sends the anonymous
 function below to spl_autoload_register():
 
-    function ($class) {
-        $file = str_replace('\\', '/', $class) . '.php';
-        require BASE . '/src/' . $file;
-    }
+  function ($class) {
+      $file = str_replace('\\', '/', $class) . '.php';
+      require BASE . '/src/' . $file;
+  }
 
 With this autoloader, a class X\Y\Z for example, is parsed into
 $file = X/Y/Z.php
@@ -164,7 +168,7 @@ require ~Zend/workspaces/DefaultWorkspace/orderapp/src/X/Y/Z.php
 The classes in the vendor folder like Guzzle and Monolog do not appear that
 they would be autoloaded because the composer autoloader is commented out:
 
-//require '../vendor/autoload.php';
-/**
- * @todo: revise this
- */
+  //require '../vendor/autoload.php';
+  /**
+  * @todo: revise this
+  */
