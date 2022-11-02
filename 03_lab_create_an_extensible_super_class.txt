@@ -1,9 +1,14 @@
 Complete the following:
 
-1. Using the code created in the previous exercise, create an extensible superclass definition. Set the properties and methods that subclasses will need.
+1. Using the code created in the previous exercise, create an extensible
+superclass definition. Set the properties and methods that subclasses will need.
 
-2. Create one or more subclasses that extend the superclass with constants, properties and methods specific to the subclass.
+2. Create one or more subclasses that extend the superclass with constants,
+properties and methods specific to the subclass.
 
-3. Instantiate a couple of objects from the subclasses and execute the methods producing some output.
+3. Instantiate a couple of objects from the subclasses and execute the methods
+producing some output.
 
-In taskmaster folder in var/www/html.
+Added to taskmaster folder in var/www/html on the VM.
+
+See /taskmaster/ in repository.
