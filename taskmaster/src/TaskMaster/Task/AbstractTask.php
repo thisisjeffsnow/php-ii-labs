@@ -1,5 +1,7 @@
 <?php
 namespace TaskMaster\Task;
+use TaskMaster\Objective\Objective;
+use Exception;
 
 /**
  * Class AbstractTask
@@ -9,7 +11,9 @@ abstract class AbstractTask implements TaskInterface {
 
     public string $title;
     public bool   $visibility;
+    public array  $objectives = [];
 
+    /* AbstractTask Constructor */
     public function __construct(
         string $title,
         bool $visibility = true
@@ -18,6 +22,13 @@ abstract class AbstractTask implements TaskInterface {
         $this->visibility = $visibility;
     }
 
+    /* Magic Methods */
+    public function __set($key, $value) {
+        $message = 'Cannot access nonexistent or inaccessible properties.';
+        throw New Exception($message);
+    }
+
+    /* Required Interface Methods */
     public function show() {
         $this->visibility = true;
     }
@@ -26,11 +37,13 @@ abstract class AbstractTask implements TaskInterface {
         $this->visibility = false;
     }
 
+    /* Abstract Method Subclass Requirement */
     /**
-     * @param string $description
+     * @return void
      */
-    public abstract function add_objective(string $description);
+    public abstract function reset_defaults() : void;
 
+    /* Inheritable Methods */
     /**
      * @return string
      */
@@ -44,6 +57,16 @@ abstract class AbstractTask implements TaskInterface {
      */
     public function set_title(string $title) : void {
         $this->title = $title;
+    }
+
+    /**
+     * @param string $description
+     * @return Objective
+     */
+    public function add_objective(string $description) : Objective {
+        $objective = New Objective($description);
+        $this->objectives[] = $objective;
+        return $objective;
     }
 
 }
