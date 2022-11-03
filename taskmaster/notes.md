@@ -14,10 +14,11 @@ should consider completing the task.
 Superclass would be an AbstractTask then. The AbstractTask is what all tasks
 would have in common, and then each categorization of tasks would be its own
 subclass which extends from AbstractTask. What I thought would have been
-SubTask could be reimagined as each Task having an array of Objectives instead.
+SubTask could be re-imagined as each descendant of AbstractTask having an array
+of Objectives instead.
 
-A Task for example might be to take out your trash, but that is very broad.
-What does that even mean?
+A descendant of AbstractTask for example might be to take out your trash, but
+that is very broad. What does that even mean?
 
 Objectives listed in this Task would further detail the steps to complete task.
 ```
@@ -26,5 +27,8 @@ Objective: Replace bag in bin with new one.
 ```
 
 Objective would be a different class and we could tie Objectives to Tasks,
-rather than imagining these Obectives as descendant types of the same class
+rather than imagining these Objectives as descendant types of the same class
 Task.
+
+Board would be another class. Descendants of AbstractTask would belong to
+Boards.
