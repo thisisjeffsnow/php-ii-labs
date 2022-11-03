@@ -4,38 +4,32 @@ namespace TaskMaster\Task;
 /**
  * Class AbstractTask
  */
-abstract class AbstractTask {
+abstract class AbstractTask implements TaskInterface {
     public const TABLE = 'task';
 
-    public int    $id;
     public string $title;
-    public string $description;
-    public array  $objectives = [];
-    public string $visibility = 'show';
-    public string $location = 'home';
-    public string $expiry = '1/1/1970';
-    public string $frequency = 'daily';
-    public int    $enjoyment = 5;
-    public int    $importance = 5;
+    public bool   $visibility;
 
     public function __construct(
-        int    $id,
         string $title,
-        string $description
+        bool $visibility = true
     ) {
-        $this->id = $id;
         $this->title = $title;
-        $this->description = $description;
+        $this->visibility = $visibility;
     }
 
-    public abstract function add_objective(string $description);
+    public function show() {
+        $this->visibility = true;
+    }
+
+    public function hide() {
+        $this->visibility = false;
+    }
 
     /**
-     * @return int
+     * @param string $description
      */
-    public function get_id() : int {
-        return $this->id;
-    }
+    public abstract function add_objective(string $description);
 
     /**
      * @return string
@@ -50,21 +44,6 @@ abstract class AbstractTask {
      */
     public function set_title(string $title) : void {
         $this->title = $title;
-    }
-
-    /**
-     * @return string
-     */
-    public function get_description() : string {
-        return $this->description;
-    }
-
-    /**
-     * @param string $description
-     * @return void
-     */
-    public function set_description(string $description) : void {
-        $this->description = $description;
     }
 
 }

@@ -9,32 +9,31 @@ use Exception;
 class ITTask extends AbstractTask {
     public const LANGUAGE = ['PHP', 'Python', 'Ruby', 'Perl'];
 
+    public array $objectives = [];
+
     /**
      * ITTask Constructor
      */
     public function __construct(
-        int    $id,
         string $title,
-        string $description,
+        bool   $visibility = true,
         public string $server_os = 'Ubuntu',
         public int    $memory_size_gb = 128,
         public string $language = 'PHP',
         public string $database = 'MySQL'
     ) {
-        parent::__construct($id, $title, $description);
-        $this->server_os = $server_os;
-        $this->memory_size_gb = $memory_size_gb;
-        $this->language = $language;
-        $this->database = $database;
+        parent::__construct($title, $visibility);
     }
 
     /**
      * Magic Method: __toString()
      */
     public function __toString() : string {
-        $return = $this->title . ': ' . $this->description;
+        $return = $this->title . ' [' . $this->server_os . ', '
+        . $this->memory_size_gb . ', ' . $this->language . ', '
+        . $this->database . ']';
         $return .= count($this->objectives) > 0 ?
-        ' (' . implode(' ', $this->objectives) . ')'
+        ' [' . implode(' ', $this->objectives) . ']'
         : '';
         return $return;
     }
@@ -57,7 +56,5 @@ class ITTask extends AbstractTask {
         $this->objectives[] = $objective;
         return $objective;
     }
-
-
 
 }

@@ -18,7 +18,6 @@ echo 'Create a new IT Task about applying updates. What does it look like?';
 echo PHP_EOL;
 
 $it_task = new ITTask(
-    0,
     'Apply Updates',
     'Run updates on the local machine and reboot afterward'
 );
@@ -46,3 +45,14 @@ try {
     echo $e->getMessage();
     echo PHP_EOL;
 }
+
+echo 'IT Task Visibility = ' . ($it_task->visibility ? 'Shown' : 'Hidden');
+echo PHP_EOL;
+
+echo 'Hide the IT Task.';
+echo PHP_EOL;
+
+$it_task->hide();
+
+echo 'IT Task Visibility = ' . ($it_task->visibility ? 'Shown' : 'Hidden');
+

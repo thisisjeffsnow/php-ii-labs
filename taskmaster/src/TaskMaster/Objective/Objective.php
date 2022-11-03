@@ -1,7 +1,7 @@
 <?php
 namespace TaskMaster\Objective;
 /**
- * Class:  Objective
+ * Class: Objective
  */
 class Objective {
 
