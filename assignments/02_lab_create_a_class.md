@@ -15,6 +15,4 @@ application for your domain.
 ---
 Answer:
 
-Added source files to taskmaster folder in var/www/html on the VM.
-
 Source files added to taskmaster folder in repository.

@@ -9,4 +9,8 @@ into the object on instantiation.
 3. Create an index.php file.
 4. Load, or autoload, the created classes.
 5. Instantiate object instances, and exercise the magic methods implemented.
+
 ---
+Answer:
+
+Source files added to taskmaster folder in repository.
