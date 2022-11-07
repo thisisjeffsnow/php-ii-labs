@@ -8,6 +8,8 @@ methods named the same in both traits.
 3. Resolve the naming collision, and change the method visibilities.
 4. Instantiate an instance opf the class and execute the trait methods.
 ---
+Answer:
 
+Source files added to traits folder in repository.
 
 
